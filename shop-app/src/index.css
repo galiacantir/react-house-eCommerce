@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* --- General style ---*/
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background-color: #fff;
+  color: #222;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+}
+
+.wrapper{
+  width: 1280px;
+  margin: 50px auto;
+}
+
+
+/* --- Header Style --- */
+
+header{
+  position: relative;
+}
+
+header .logo{
+  font-weight: 600;
+  font-size: 20px;
+}
+
+header ul.nav {
+  list-style: none;
+  float: right;
+}
+
+header ul.nav li{
+  display: inline;
+  margin-left: 25px;
+  cursor: pointer;
+  transition: opacity 500ms ease;
+}
+
+header ul.nav li:hover{
+  opacity: 0.5;
+}
+
+header .shop-cart-button{
+  float: right;
+  cursor: pointer;
+  transition: color, transform 500ms ease;
+}
+
+header .shop-cart-button:hover, 
+header .shop-cart-button.active{
+  color: #dc3d3d;
+  transform: scale(1.5);
+}
+
+header .shop-cart {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  width: 450px;
+  /* min-height:100px; */
+  background-color: #f5f5f5;
+  -webkit-box-shadow: 4px 5px 15px -7px #606060;
+  box-shadow: 4px 5px 15px -7px #606060;
+  z-index: 1000;
+  padding: 20px;
+  padding-bottom: 0;
+}
+
+header .shop-cart .item{
+  width: 100%;
+  float: left;
+  margin-bottom: 20px;
+}
+
+header .shop-cart .empty-cart p{
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+header .shop-cart .item img{
+  width: 70px;
+  float: left;
+  margin-right: 20px;
+}
+
+header .shop-cart .item .item-title{
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+header .shop-cart .item b{
+  color: #797979;
+  font-weight: 600;
+}
+
+header .shop-cart .item .delete-item{
+  color: #333;
+  float: right;
+  position: relative;
+  top: -25px;
+  cursor: pointer;
+  transition: color, transform 500ms ease;
+}
+
+header .shop-cart .item .delete-item:hover{
+  color: #d83030;
+  transform: scale(1.5);
+}
+
+.summa{
+  float: left; 
+  width: 100%;
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+
+header .presentation {
+  margin: 50px 0;
+  background: url('./assets/sofa-5213406_1280.jpg');
+  width: 100%;
+  height: 500px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  /*background-blend-mode: multiply;
+  background-color: #bcbcbc; */
+}
+
+/*header .presentation::after{
+  content: 'Products that will make your home smarter';
+  position: absolute;
+  top: 200px;
+  left: 400px;
+  width: 500px;
+  font-size: 40px;
+  font-weight: 600;
+}*/
+
+header h2{
+  font-weight: 600;
+  text-align: center;
+  font-size: 40px;
+  padding: 150px;
+
+}
+
+/* --- Categories --- */
+
+.categories div{
+  display: inline-block;
+  background: #f2f2f2;
+  border-radius: 50px;
+  padding: 10px 20px;
+  margin-bottom: 25px;
+  margin-right: 20px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 500ms ease;
+}
+
+.categories div:hover{
+  border-color: #606060;
+  transform: scale(1.1);
+}
+
+/* --- Main Products Style --- */
+
+main {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+main .item{
+  width: 30%;
+  margin-bottom: 50px;
+  background-color: #f5f5f5;
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+main .item img {
+  width: 100%;
+  height: 300px;
+  transition: transform 500ms ease;
+  cursor: pointer;
+}
+
+main .item img:hover {
+  transform: scale(1.05);
+}
+
+main h3, .full-item h3,
+main p, .full-item p,
+main b, .full-item b{
+  margin: 10px 20px;
+  color: #333;
+}
+
+main b, .full-item b{
+  color: #5fa36a
+}
+
+main .add-to-cart, 
+.full-item .add-to-cart{
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  background: #E96A3E;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  line-height: 35px;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 50%;
+  font-weight: 600;
+  transition: transform 500ms ease;
+}
+
+main .add-to-cart:hover, .full-item .add-to-cart:hover{
+  transform: scale(1.2) translateY(-5px);
+}
+
+/*--- Modal | Full Info Products */
+
+.full-item{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #0c0c0cb0;
+  z-index: 9999;
+  overflow: auto;
+}
+
+.full-item img {
+  width: 100%;
+  height: auto;
+  transition: transform 500ms ease;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.full-item img:hover{
+  transform: scale(1.05);
+}
+
+.full-item > div {
+  width: 600px;
+  position: relative;
+  margin: 10% auto;
+  padding: 40px 30px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+}
+
+/*--- Footer Style --- */
+
+footer{
+  text-align: center;
+  background-color: #333;
+  color: #f5f5f5;
+  padding: 30px 0;
+}
